@@ -22,7 +22,7 @@ public class LoginPageTest extends DriverSetup {
     }
 
 
-   /* @Test(dataProvider = "invalidCredentials",dataProviderClass = DataSet.class, priority = 1)
+   @Test(dataProvider = "invalidCredentials",dataProviderClass = DataSet.class, priority = 1)
     @Description("Testing login functionality with invalid credentials")
     public void testLoginWithoutInvalidCredentials(String username, String password, String warning){
         loginPage.writeOnElement(loginPage.Username,username);
@@ -30,9 +30,9 @@ public class LoginPageTest extends DriverSetup {
         loginPage.clickOnElement(loginPage.loginButton);
         loginPage.addScreenShot("After trying to logging in with wrong credentials");
         Assert.assertEquals(loginPage.getElementText(loginPage.warningMessage), warning);
-    }*/
+    }
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     @Description("Verify login with a valid username and valid password.")
     public void loginWithValidCredential() throws InterruptedException {
         loginPage.writeOnElement(loginPage.Username,"tausif");
@@ -44,7 +44,7 @@ public class LoginPageTest extends DriverSetup {
         //loginPage.clickOnElement(loginPage.logOutButton);
     }
 
-    @Test(priority = 2)
+    @Test(priority = 3)
     @Description("Verify that users can successfully enter details for a card into the system.")
     public void newCardEntry(){
         //dashboardPage.clickOnElement(dashboardPage.settingsLink);
