@@ -10,7 +10,6 @@ import utilities.DriverSetup;
 
 public class CardIssueTest extends DriverSetup {
 
-    DashboardPage dashboardPage = new DashboardPage();
     CardIssuePage cardIssuePage = new CardIssuePage();
     LoginPage loginPage = new LoginPage();
     @Test(priority = 1)
@@ -24,10 +23,10 @@ public class CardIssueTest extends DriverSetup {
         cardIssuePage.selectWithVisibleText(cardIssuePage.selectCardTariffType,"Hourly");
         cardIssuePage.selectWithVisibleText(cardIssuePage.selectCardVehicleType,"Motorcycle");
         Thread.sleep(3000);
-        cardIssuePage.selectWithVisibleText(cardIssuePage.selectCard,"Hride21");
+        cardIssuePage.selectWithVisibleText(cardIssuePage.selectCard,"Hride25");
         Thread.sleep(3000);
         cardIssuePage.writeOnElement(cardIssuePage.enterDriverName,"Hafiz");
-        cardIssuePage.writeOnElement(cardIssuePage.enterVehicleRegistrationNumber,"Qa-41-1000");
+        cardIssuePage.writeOnElement(cardIssuePage.enterVehicleRegistrationNumber,"Na-41-1000");
         cardIssuePage.writeOnElement(cardIssuePage.enterDriverContact,"0048151");
         cardIssuePage.clickOnElement(cardIssuePage.clickCardSubmitButton);
         cardIssuePage.addScreenShot("After Successful Card Issue");
@@ -41,11 +40,9 @@ public class CardIssueTest extends DriverSetup {
         Thread.sleep(3000);
         cardIssuePage.selectWithVisibleText(cardIssuePage.selectCardTariffType,"Daily");
         cardIssuePage.selectWithVisibleText(cardIssuePage.selectCardVehicleType,"Motorcycle");
-        Thread.sleep(3000);
-        cardIssuePage.selectWithVisibleText(cardIssuePage.selectCard,"Hride22");
-        Thread.sleep(3000);
+        cardIssuePage.selectWithVisibleText(cardIssuePage.selectCard,"Hride26");
         cardIssuePage.writeOnElement(cardIssuePage.enterDriverName,"Hafiz");
-        cardIssuePage.writeOnElement(cardIssuePage.enterVehicleRegistrationNumber,"Fa-85-1010");
+        cardIssuePage.writeOnElement(cardIssuePage.enterVehicleRegistrationNumber,"Na-85-1010");
         cardIssuePage.writeOnElement(cardIssuePage.enterDriverContact,"017770");
         cardIssuePage.clickOnElement(cardIssuePage.clickCardSubmitButton);
         cardIssuePage.addScreenShot("After Successful Card Issue");

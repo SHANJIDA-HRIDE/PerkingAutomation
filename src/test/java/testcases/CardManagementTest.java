@@ -11,8 +11,6 @@ import pages.DashboardPage;
 import utilities.DriverSetup;
 
 public class CardManagementTest extends DriverSetup {
-
-    LoginPage loginPage = new LoginPage();
     CardManagementPage cardManagementPage = new CardManagementPage();
     DashboardPage dashboardPage = new DashboardPage();
 
@@ -21,15 +19,9 @@ public class CardManagementTest extends DriverSetup {
     @Test(priority = 1)
     @Description("Verify that users can successfully enter details for a card into the system.")
     public void newCardEntry(){
-        getDriver().get(loginPage.loginPageUrl);
-        loginPage.writeOnElement(loginPage.Username,"tausif");
-        loginPage.writeOnElement(loginPage.Password,"1234");
-        loginPage.clickOnElement(loginPage.loginButton);
-        loginPage.addScreenShot("After logging in with correct credentials");
-        Assert.assertEquals(loginPage.getElementText(loginPage.confirmationMessageElement),"Dashboard");
         dashboardPage.clickOnElement(dashboardPage.settingsLink);
         dashboardPage.clickOnElement(dashboardPage.cardManagementLink);
-        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,"Hride24");
+        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,"Hride25");
         cardManagementPage.clickOnElement(cardManagementPage.submitCardButton);
         cardManagementPage.addScreenShot("After enter new card");
         Assert.assertEquals(cardManagementPage.getElementText(cardManagementPage.successAlert),"Card created successfully.");

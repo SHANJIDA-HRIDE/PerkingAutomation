@@ -10,17 +10,13 @@ import pages.VehicleManualEntryPage;
 import utilities.DriverSetup;
 
 public class VehicleManualEntryTest extends DriverSetup {
-
-    DashboardPage dashboardPage = new DashboardPage();
-    CardIssuePage cardIssuePage = new CardIssuePage();
-    LoginPage loginPage = new LoginPage();
     VehicleManualEntryPage vehicleManualEntry = new VehicleManualEntryPage();
 
     @Test(priority = 1)
     @Description("Validate Entry of Vehicle Manual Entry with Card")
     public void VehicleManualEntry() throws InterruptedException {
         getDriver().get(vehicleManualEntry.vehicleManualEntryPageUrl);
-        vehicleManualEntry.writeOnElement(vehicleManualEntry.enterVehicleManualEntryCard,"Hride21");
+        vehicleManualEntry.writeOnElement(vehicleManualEntry.enterVehicleManualEntryCard,"Hride26");
         Thread.sleep(3000);
         vehicleManualEntry.clickOnElement(vehicleManualEntry.clickSubmitVehicleManualEntryCard);
         vehicleManualEntry.addScreenShot("After Successful Vehicle Manual Entry");

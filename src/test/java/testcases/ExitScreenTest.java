@@ -10,8 +10,6 @@ import pages.LoginPage;
 import utilities.DriverSetup;
 
 public class ExitScreenTest extends DriverSetup {
-
-    LoginPage loginPage = new LoginPage();
     ExitScreenPage exitScreenPage = new ExitScreenPage();
     @Test(priority = 1)
     @Description("Validate Hourly Bill Calculation in Exit Payment Page")
@@ -19,7 +17,7 @@ public class ExitScreenTest extends DriverSetup {
         getDriver().get(exitScreenPage.exitScreenPageUrl);
         exitScreenPage.addScreenShot("After click to the Exit Screen page");
         Thread.sleep(2000);
-        exitScreenPage.writeOnElement(exitScreenPage.enterCardNumToExitScreen,"Hride21");
+        exitScreenPage.writeOnElement(exitScreenPage.enterCardNumToExitScreen,"Hride26");
         Thread.sleep(3000);
         exitScreenPage.clickOnElement(exitScreenPage.clickOnCalculateButton);
         exitScreenPage.clickOnCheckBox(exitScreenPage.clickVehicleMatchedCheckBox);
