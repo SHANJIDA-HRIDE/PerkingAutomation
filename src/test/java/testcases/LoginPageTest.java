@@ -13,8 +13,6 @@ import utilities.DriverSetup;
 public class LoginPageTest extends DriverSetup {
 
     LoginPage loginPage = new LoginPage();
-    CardManagementPage cardManagementPage = new CardManagementPage();
-    DashboardPage dashboardPage = new DashboardPage();
 
     /*@BeforeMethod
     public void getToTheUrl(){

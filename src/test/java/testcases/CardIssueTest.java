@@ -16,11 +16,6 @@ public class CardIssueTest extends DriverSetup {
     @Test(priority = 1)
     @Description("Validate Entry of Card Issue with Mode Post-Paid Hourly")
     public void cardIssueWithModePostPaidHourly() throws InterruptedException {
-        getDriver().get(loginPage.loginPageUrl);
-        loginPage.writeOnElement(loginPage.Username,"tausif");
-        loginPage.writeOnElement(loginPage.Password,"1234");
-        loginPage.clickOnElement(loginPage.loginButton);
-        Thread.sleep(2000);
         getDriver().get(cardIssuePage.cardIssuePageUrl);
         cardIssuePage.addScreenShot("After click to the Card Issue page");
         Assert.assertEquals(cardIssuePage.getElementText(cardIssuePage.cardIssuePageAssertion),"Card Issue at Entry Booth");
@@ -29,11 +24,11 @@ public class CardIssueTest extends DriverSetup {
         cardIssuePage.selectWithVisibleText(cardIssuePage.selectCardTariffType,"Hourly");
         cardIssuePage.selectWithVisibleText(cardIssuePage.selectCardVehicleType,"Motorcycle");
         Thread.sleep(3000);
-        cardIssuePage.selectWithVisibleText(cardIssuePage.selectCard,"Hride2");
+        cardIssuePage.selectWithVisibleText(cardIssuePage.selectCard,"Hride21");
         Thread.sleep(3000);
         cardIssuePage.writeOnElement(cardIssuePage.enterDriverName,"Hafiz");
-        cardIssuePage.writeOnElement(cardIssuePage.enterVehicleRegistrationNumber,"Fa-41-1000");
-        cardIssuePage.writeOnElement(cardIssuePage.enterDriverContact,"01777048151");
+        cardIssuePage.writeOnElement(cardIssuePage.enterVehicleRegistrationNumber,"Qa-41-1000");
+        cardIssuePage.writeOnElement(cardIssuePage.enterDriverContact,"0048151");
         cardIssuePage.clickOnElement(cardIssuePage.clickCardSubmitButton);
         cardIssuePage.addScreenShot("After Successful Card Issue");
         Assert.assertEquals(cardIssuePage.getElementText(cardIssuePage.cardEnterSuccessAssertion),"The card issued successfully.");
@@ -47,11 +42,11 @@ public class CardIssueTest extends DriverSetup {
         cardIssuePage.selectWithVisibleText(cardIssuePage.selectCardTariffType,"Daily");
         cardIssuePage.selectWithVisibleText(cardIssuePage.selectCardVehicleType,"Motorcycle");
         Thread.sleep(3000);
-        cardIssuePage.selectWithVisibleText(cardIssuePage.selectCard,"Hride3");
+        cardIssuePage.selectWithVisibleText(cardIssuePage.selectCard,"Hride22");
         Thread.sleep(3000);
         cardIssuePage.writeOnElement(cardIssuePage.enterDriverName,"Hafiz");
-        cardIssuePage.writeOnElement(cardIssuePage.enterVehicleRegistrationNumber,"Fa-55-1000");
-        cardIssuePage.writeOnElement(cardIssuePage.enterDriverContact,"01777048151");
+        cardIssuePage.writeOnElement(cardIssuePage.enterVehicleRegistrationNumber,"Fa-85-1010");
+        cardIssuePage.writeOnElement(cardIssuePage.enterDriverContact,"017770");
         cardIssuePage.clickOnElement(cardIssuePage.clickCardSubmitButton);
         cardIssuePage.addScreenShot("After Successful Card Issue");
         Assert.assertEquals(cardIssuePage.getElementText(cardIssuePage.cardEnterSuccessAssertion),"The card issued successfully.");

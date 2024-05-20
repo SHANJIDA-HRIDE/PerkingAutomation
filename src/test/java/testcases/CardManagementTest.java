@@ -17,12 +17,6 @@ public class CardManagementTest extends DriverSetup {
     DashboardPage dashboardPage = new DashboardPage();
 
 
-   /* @BeforeMethod
-    public void getToTheUrl(){
-        getDriver().get(loginPage.loginPageUrl);
-    }*/
-
-
 
     @Test(priority = 1)
     @Description("Verify that users can successfully enter details for a card into the system.")
@@ -35,7 +29,7 @@ public class CardManagementTest extends DriverSetup {
         Assert.assertEquals(loginPage.getElementText(loginPage.confirmationMessageElement),"Dashboard");
         dashboardPage.clickOnElement(dashboardPage.settingsLink);
         dashboardPage.clickOnElement(dashboardPage.cardManagementLink);
-        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,"CardTest5010");
+        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,"Hride24");
         cardManagementPage.clickOnElement(cardManagementPage.submitCardButton);
         cardManagementPage.addScreenShot("After enter new card");
         Assert.assertEquals(cardManagementPage.getElementText(cardManagementPage.successAlert),"Card created successfully.");
@@ -44,7 +38,7 @@ public class CardManagementTest extends DriverSetup {
     @Test(priority = 2)
     @Description("Prevent Duplicate Card Number Entry")
     public void duplicateCardEntry(){
-        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,"CardTest5010");
+        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,"Hride21");
         cardManagementPage.clickOnElement(cardManagementPage.submitCardButton);
         cardManagementPage.addScreenShot("After enter Duplicate card");
         Assert.assertEquals(cardManagementPage.getElementText(cardManagementPage.duplicateAlert),"Card with this number already exists. Please use a different number");
@@ -56,7 +50,7 @@ public class CardManagementTest extends DriverSetup {
         cardManagementPage.writeOnElement(cardManagementPage.cardSearch,"CardTest5007");
         cardManagementPage.addScreenShot("After search card");
         Assert.assertTrue(cardManagementPage.isElementVisible(cardManagementPage.cardFoundAssertion));
-    }*/
+    }
     @Test(priority = 3)
     @Description("Test whether users can update the details of an existing card in the system ")
     public void editCard() throws InterruptedException {
@@ -65,6 +59,6 @@ public class CardManagementTest extends DriverSetup {
         cardManagementPage.clickOnRadioButton(cardManagementPage.cardEditToInactive);
         cardManagementPage.clickOnElement(cardManagementPage.cardEditSaveChanges);
 
-    }
+    }*/
 
 }

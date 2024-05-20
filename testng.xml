@@ -18,6 +18,22 @@
                     <include name="editCard"/>
                 </methods>
             </class>
+            <class name="testcases.CardIssueTest">
+                <methods>
+                    <include name="cardIssueWithModePostPaidHourly"/>
+                    <include name="cardIssueWithModePostPaidDaily"/>
+                </methods>
+            </class>
+            <class name="testcases.VehicleManualEntryTest">
+                <methods>
+                    <include name="VehicleManualEntry"/>
+                </methods>
+            </class>
+            <class name="testcases.ExitScreenTest">
+                <methods>
+                    <include name="cardExitWithCard"/>
+                </methods>
+            </class>
 
         </classes>
     </test>

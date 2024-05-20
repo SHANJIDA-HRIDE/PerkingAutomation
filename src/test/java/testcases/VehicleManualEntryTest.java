@@ -19,13 +19,8 @@ public class VehicleManualEntryTest extends DriverSetup {
     @Test(priority = 1)
     @Description("Validate Entry of Vehicle Manual Entry with Card")
     public void VehicleManualEntry() throws InterruptedException {
-        getDriver().get(loginPage.loginPageUrl);
-        loginPage.writeOnElement(loginPage.Username,"tausif");
-        loginPage.writeOnElement(loginPage.Password,"1234");
-        loginPage.clickOnElement(loginPage.loginButton);
-        Thread.sleep(2000);
         getDriver().get(vehicleManualEntry.vehicleManualEntryPageUrl);
-        vehicleManualEntry.writeOnElement(vehicleManualEntry.enterVehicleManualEntryCard,"Hride4");
+        vehicleManualEntry.writeOnElement(vehicleManualEntry.enterVehicleManualEntryCard,"Hride21");
         Thread.sleep(3000);
         vehicleManualEntry.clickOnElement(vehicleManualEntry.clickSubmitVehicleManualEntryCard);
         vehicleManualEntry.addScreenShot("After Successful Vehicle Manual Entry");

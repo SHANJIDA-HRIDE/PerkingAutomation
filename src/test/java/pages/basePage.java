@@ -61,6 +61,11 @@ public class basePage {
         radioButton.click();
     }
 
+    public void clickOnCheckBox(By locator){
+        WebElement checkBox = getDriver().findElement(locator);
+        checkBox.click();
+    }
+
     public void writeOnElement(By locator, String text){
         getElement(locator).clear();
         getElement(locator).sendKeys(text);
