@@ -2,6 +2,7 @@ package testcases;
 
 import io.qameta.allure.Description;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.LoginPage;
@@ -16,17 +17,25 @@ public class CardManagementTest extends DriverSetup {
     DashboardPage dashboardPage = new DashboardPage();
 
 
-    @BeforeMethod
+   /* @BeforeMethod
     public void getToTheUrl(){
         getDriver().get(loginPage.loginPageUrl);
-    }
+    }*/
+
+
 
     @Test(priority = 1)
     @Description("Verify that users can successfully enter details for a card into the system.")
     public void newCardEntry(){
+        getDriver().get(loginPage.loginPageUrl);
+        loginPage.writeOnElement(loginPage.Username,"tausif");
+        loginPage.writeOnElement(loginPage.Password,"1234");
+        loginPage.clickOnElement(loginPage.loginButton);
+        loginPage.addScreenShot("After logging in with correct credentials");
+        Assert.assertEquals(loginPage.getElementText(loginPage.confirmationMessageElement),"Dashboard");
         dashboardPage.clickOnElement(dashboardPage.settingsLink);
         dashboardPage.clickOnElement(dashboardPage.cardManagementLink);
-        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,"CardTest5001");
+        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,"CardTest5010");
         cardManagementPage.clickOnElement(cardManagementPage.submitCardButton);
         cardManagementPage.addScreenShot("After enter new card");
         Assert.assertEquals(cardManagementPage.getElementText(cardManagementPage.successAlert),"Card created successfully.");
@@ -35,10 +44,27 @@ public class CardManagementTest extends DriverSetup {
     @Test(priority = 2)
     @Description("Prevent Duplicate Card Number Entry")
     public void duplicateCardEntry(){
-        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,"CardTest5001");
+        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,"CardTest5010");
         cardManagementPage.clickOnElement(cardManagementPage.submitCardButton);
         cardManagementPage.addScreenShot("After enter Duplicate card");
         Assert.assertEquals(cardManagementPage.getElementText(cardManagementPage.duplicateAlert),"Card with this number already exists. Please use a different number");
+    }
+
+    /*@Test(priority = 3)
+    @Description("Validate card search")
+    public void cardSearch(){
+        cardManagementPage.writeOnElement(cardManagementPage.cardSearch,"CardTest5007");
+        cardManagementPage.addScreenShot("After search card");
+        Assert.assertTrue(cardManagementPage.isElementVisible(cardManagementPage.cardFoundAssertion));
+    }*/
+    @Test(priority = 3)
+    @Description("Test whether users can update the details of an existing card in the system ")
+    public void editCard() throws InterruptedException {
+        cardManagementPage.clickOnElement(cardManagementPage.clickEditCardButton);
+        Thread.sleep(2000);
+        cardManagementPage.clickOnRadioButton(cardManagementPage.cardEditToInactive);
+        cardManagementPage.clickOnElement(cardManagementPage.cardEditSaveChanges);
+
     }
 
 }

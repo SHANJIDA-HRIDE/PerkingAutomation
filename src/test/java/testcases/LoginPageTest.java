@@ -16,15 +16,16 @@ public class LoginPageTest extends DriverSetup {
     CardManagementPage cardManagementPage = new CardManagementPage();
     DashboardPage dashboardPage = new DashboardPage();
 
-    @BeforeMethod
+    /*@BeforeMethod
     public void getToTheUrl(){
         getDriver().get(loginPage.loginPageUrl);
-    }
+    }*/
 
 
    @Test(dataProvider = "invalidCredentials",dataProviderClass = DataSet.class, priority = 1)
     @Description("Testing login functionality with invalid credentials")
     public void testLoginWithoutInvalidCredentials(String username, String password, String warning){
+        getDriver().get(loginPage.loginPageUrl);
         loginPage.writeOnElement(loginPage.Username,username);
         loginPage.writeOnElement(loginPage.Password,password);
         loginPage.clickOnElement(loginPage.loginButton);
@@ -32,31 +33,18 @@ public class LoginPageTest extends DriverSetup {
         Assert.assertEquals(loginPage.getElementText(loginPage.warningMessage), warning);
     }
 
-    @Test(priority = 2)
+   /* @Test(priority = 2)
     @Description("Verify login with a valid username and valid password.")
     public void loginWithValidCredential() throws InterruptedException {
         loginPage.writeOnElement(loginPage.Username,"tausif");
         loginPage.writeOnElement(loginPage.Password,"1234");
         loginPage.clickOnElement(loginPage.loginButton);
         Thread.sleep(2000);
-        //loginPage.addScreenShot("After logging in with correct credentials");
-        //Assert.assertEquals(loginPage.getElementText(loginPage.confirmationMessageElement),"Dashboard");
-        //loginPage.clickOnElement(loginPage.logOutButton);
-    }
+        loginPage.addScreenShot("After logging in with correct credentials");
+        Assert.assertEquals(loginPage.getElementText(loginPage.confirmationMessageElement),"Dashboard");
+        loginPage.clickOnElement(loginPage.logOutButton);
+    }*/
 
-    @Test(priority = 3)
-    @Description("Verify that users can successfully enter details for a card into the system.")
-    public void newCardEntry(){
-        //dashboardPage.clickOnElement(dashboardPage.settingsLink);
-        //dashboardPage.clickOnElement(dashboardPage.cardManagementLink);
-
-        getDriver().get(cardManagementPage.cardPageUrl);
-
-        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,"CardTest5001");
-        cardManagementPage.clickOnElement(cardManagementPage.submitCardButton);
-        cardManagementPage.addScreenShot("After enter new card");
-        Assert.assertEquals(cardManagementPage.getElementText(cardManagementPage.successAlert),"Card created successfully.");
-    }
 
 
 

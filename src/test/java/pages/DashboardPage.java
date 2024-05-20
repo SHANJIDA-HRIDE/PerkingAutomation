@@ -9,4 +9,5 @@ public class DashboardPage extends basePage{
     public By operationsLink = By.xpath("//a[@class='nav-link' and @href='#operations']");
     public By reportsLink = By.xpath("//a[@class='nav-link' and @href='#reports']");
     public By cardManagementLink = By.xpath("//li[@class='nav-item']//a[@class='nav-link' and @href='/card']");
+    public By cardIssueLink = By.xpath("//li[@class='nav-item']//a[@class='nav-link active' and contains(@href, '/card_issue/')]");
 }
