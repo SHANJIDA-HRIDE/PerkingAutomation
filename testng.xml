@@ -8,25 +8,37 @@
             <class name="testcases.LoginPageTest">
                 <methods>
                     <include name="testLoginWithoutInvalidCredentials"/>
+                    <include name="loginWithValidCredential"/>
+                </methods>
+            </class>
+            <class name="testcases.UserManagementTest">
+                <methods>
+                    <include name="newUserEntry"/>
+                    <include name="newUserEntryExistingUsername"/>
                 </methods>
             </class>
             <class name="testcases.CardManagementTest">
                 <methods>
                     <!---->
-                   <include name="newCardEntry"/>
+                   <include name="newCardEntry1"/>
+                    <include name="newCardEntry2"/>
                    <include name="duplicateCardEntry"/>
-                    <include name="editCard"/>
                 </methods>
             </class>
             <class name="testcases.CardIssueTest">
                 <methods>
-                    <include name="cardIssueWithModePostPaidHourly"/>
-                    <include name="cardIssueWithModePostPaidDaily"/>
+                    <include name="cardIssueWithModePostPaidHourly_Daily"/>
                 </methods>
             </class>
             <class name="testcases.VehicleManualEntryTest">
                 <methods>
-                    <include name="VehicleManualEntry"/>
+                    <include name="VehicleManualEntry1"/>
+                    <include name="VehicleManualEntry2"/>
+                </methods>
+            </class>
+            <class name="testcases.ExitScreenExemptionTest">
+                <methods>
+                    <include name="exitScreenExemption"/>
                 </methods>
             </class>
             <class name="testcases.ExitScreenTest">
@@ -34,6 +46,7 @@
                     <include name="cardExitWithCard"/>
                 </methods>
             </class>
+
 
         </classes>
     </test>

@@ -2,12 +2,10 @@ package testcases;
 
 import io.qameta.allure.Description;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.LoginPage;
 import pages.CardManagementPage;
 import pages.DashboardPage;
+import utilities.DataSet;
 import utilities.DriverSetup;
 
 public class CardManagementTest extends DriverSetup {
@@ -16,21 +14,30 @@ public class CardManagementTest extends DriverSetup {
 
 
 
-    @Test(priority = 1)
+    @Test(dataProvider = "cardNumber1",dataProviderClass = DataSet.class, priority = 1)
     @Description("Verify that users can successfully enter details for a card into the system.")
-    public void newCardEntry(){
-        dashboardPage.clickOnElement(dashboardPage.settingsLink);
-        dashboardPage.clickOnElement(dashboardPage.cardManagementLink);
-        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,"Hride25");
+    public void newCardEntry1(String cardNumber) throws InterruptedException {
+        getDriver().get(cardManagementPage.cardPageUrl);
+        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,cardNumber);
         cardManagementPage.clickOnElement(cardManagementPage.submitCardButton);
         cardManagementPage.addScreenShot("After enter new card");
         Assert.assertEquals(cardManagementPage.getElementText(cardManagementPage.successAlert),"Card created successfully.");
     }
 
-    @Test(priority = 2)
+    @Test(dataProvider = "cardNumber2",dataProviderClass = DataSet.class, priority = 2)
+    @Description("Verify that users can successfully enter details for a card into the system.")
+    public void newCardEntry2(String cardNumber) throws InterruptedException {
+        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,cardNumber);
+        cardManagementPage.clickOnElement(cardManagementPage.submitCardButton);
+        cardManagementPage.addScreenShot("After enter new card");
+        Assert.assertEquals(cardManagementPage.getElementText(cardManagementPage.successAlert),"Card created successfully.");
+    }
+
+
+    @Test(dataProvider = "cardNumber1",dataProviderClass = DataSet.class, priority = 3)
     @Description("Prevent Duplicate Card Number Entry")
-    public void duplicateCardEntry(){
-        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,"Hride21");
+    public void duplicateCardEntry(String cardNumber){
+        cardManagementPage.writeOnElement(cardManagementPage.cardNumber,cardNumber);
         cardManagementPage.clickOnElement(cardManagementPage.submitCardButton);
         cardManagementPage.addScreenShot("After enter Duplicate card");
         Assert.assertEquals(cardManagementPage.getElementText(cardManagementPage.duplicateAlert),"Card with this number already exists. Please use a different number");

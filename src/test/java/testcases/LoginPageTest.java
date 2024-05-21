@@ -25,15 +25,17 @@ public class LoginPageTest extends DriverSetup {
         Assert.assertEquals(loginPage.getElementText(loginPage.warningMessage), warning);
     }
 
-   @Test(priority = 2)
+
+    @Test(dataProvider = "validCredentials",dataProviderClass = DataSet.class, priority = 2)
     @Description("Verify login with a valid username and valid password.")
-    public void loginWithValidCredential() throws InterruptedException {
-        loginPage.writeOnElement(loginPage.Username,"tausif");
-        loginPage.writeOnElement(loginPage.Password,"1234");
+    public void loginWithValidCredential(String username, String password) throws InterruptedException {
+        loginPage.writeOnElement(loginPage.Username,username);
+        loginPage.writeOnElement(loginPage.Password,password);
         loginPage.clickOnElement(loginPage.loginButton);
         Thread.sleep(2000);
         loginPage.addScreenShot("After logging in with correct credentials");
         Assert.assertEquals(loginPage.getElementText(loginPage.confirmationMessageElement),"Dashboard");
-        loginPage.clickOnElement(loginPage.logOutButton);
+        Thread.sleep(2000);
+        //loginPage.clickOnElement(loginPage.logOutButton);
     }
 }
