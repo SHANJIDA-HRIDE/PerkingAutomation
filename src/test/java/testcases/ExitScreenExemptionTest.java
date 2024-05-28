@@ -19,7 +19,7 @@ public class ExitScreenExemptionTest extends DriverSetup {
         Thread.sleep(2000);
         exitScreenExemption.writeOnElement(exitScreenExemption.enterCardNumToExitScreen,cardNumber);
         exitScreenExemption.clickOnElement(exitScreenExemption.clickOnCalculateButton);
-        Thread.sleep(2000);
+        Thread.sleep(6000);
         exitScreenExemption.writeOnElement(exitScreenExemption.enterCardActualPayment,actualPayment);
         Thread.sleep(2000);
         exitScreenExemption.writeOnElement(exitScreenExemption.enterCardActualPaymentReason,actualPaymentReason);

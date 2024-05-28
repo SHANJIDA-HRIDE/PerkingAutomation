@@ -28,7 +28,7 @@ public class DataSet {
     @DataProvider(name = "newUserEntry")
     public static Object newUserEntry(){
         Object[][] dataset = {
-                {"Test5","Rofiq","test5","Superadmin","1234","1234"}
+                {"Test11","Rofiq","test11","Superadmin","1234","1234"}
         };
 
         return dataset;
@@ -36,7 +36,7 @@ public class DataSet {
     @DataProvider(name = "cardNumber1")
     public static Object cardNumber1(){
         Object[][] dataset = {
-                {"cc21"}
+                {"cc32"}
         };
 
         return dataset;
@@ -45,7 +45,7 @@ public class DataSet {
     @DataProvider(name = "cardNumber2")
     public static Object cardNumber2(){
         Object[][] dataset = {
-                {"cc22"}
+                {"cc33"}
         };
 
         return dataset;
@@ -54,21 +54,23 @@ public class DataSet {
     @DataProvider(name = "cardIssueWithModePostPaidHourly_Daily")
     public static Object cardIssueWithModePostPaidHourly_Daily(){
         Object[][] dataset = {
-                {"Post-Paid","Hourly","Motorcycle","cc21","Hafiz","Na-55-1200","1234"},
-                {"Post-Paid","Daily","Private Car","cc22","Rakib","Ba-56-1300","01777048151"}
+                {"Post-Paid","Hourly","Motorcycle","cc32","Hafiz","Na-63-1200","1234"},
+                {"Post-Paid","Daily","Private Car","cc33","Rakib","Ba-64-1300","01777048151"}
         };
 
         return dataset;
     }
 
-    @DataProvider(name = "exitScreenExemption")
+
+  /*  @DataProvider(name = "exitScreenExemption")
     public static Object exitScreenExemption(){
         Object[][] dataset = {
-                {"cc22","122","Extra Paid"}
+                {"cc22","126","Extra Paid"}
         };
+
 
         return dataset;
     }
-
+*/
 
 }

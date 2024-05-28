@@ -15,7 +15,7 @@ public class UserManagementTest extends DriverSetup {
     DashboardPage dashboardPage = new DashboardPage();
 
     @Test(dataProvider = "newUserEntry",dataProviderClass = DataSet.class, priority = 1)
-    @Description("Validate User Creation with Mandatory Fields")
+    @Description("Validate User Creation with Mandatory Fields- Super Admin")
     public void newUserEntry(String firstName, String lastName,String Username, String userType,String Password, String confirmPassword) throws InterruptedException {
         dashboardPage.clickOnElement(dashboardPage.settingsLink);
         getDriver().get(userManagement.userManagementPageUrl);
@@ -35,9 +35,6 @@ public class UserManagementTest extends DriverSetup {
     @Test(dataProvider = "newUserEntry",dataProviderClass = DataSet.class, priority = 2)
     @Description("Validate User Creation with Existing Username")
     public void newUserEntryExistingUsername(String firstName, String lastName,String Username, String userType,String Password, String confirmPassword) throws InterruptedException {
-        dashboardPage.clickOnElement(dashboardPage.settingsLink);
-        getDriver().get(userManagement.userManagementPageUrl);
-        userManagement.addScreenShot("After click to the User Management page");
         userManagement.writeOnElement(userManagement.enterFirstName,firstName);
         userManagement.writeOnElement(userManagement.enterLastName,lastName);
         userManagement.writeOnElement(userManagement.enterUsername,Username);

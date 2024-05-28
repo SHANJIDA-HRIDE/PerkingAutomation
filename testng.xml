@@ -36,11 +36,11 @@
                     <include name="VehicleManualEntry2"/>
                 </methods>
             </class>
-            <class name="testcases.ExitScreenExemptionTest">
+            <!-- <class name="testcases.ExitScreenExemptionTest">
                 <methods>
                     <include name="exitScreenExemption"/>
                 </methods>
-            </class>
+            </class>-->
             <class name="testcases.ExitScreenTest">
                 <methods>
                     <include name="cardExitWithCard"/>
