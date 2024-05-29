@@ -1,7 +1,16 @@
 ## Scenario:
- - Registration of new users in the system
-- Login to Web Shop demo site: https://demowebshop.tricentis.com/
-- Now go to the books page and add to the cart a book
-- Now click on the add to cart page & select the country and terms & conditions.
-- Now add the necessary data to purchase the book & click continue.
+ - Verify login functionality with invalid credentials
+    - Invalid Username & Invalid Password
+    - Valid Username & Invalid Password
+    - Invalid Username & Valid Password
+    - Inactive User Login
+- Verify login with a valid username and valid password.
+- Verify User Creation with Mandatory Fields.
+- Verify User Creation with Existing Username
+- Verify that users can successfully enter details for a card into the system.
+- Prevent Duplicate Card Number Entry
+- Verify Entry of Card Issue with Mode Post-Paid Hourly
+- Verify Entry of Card Issue with Mode Post-Paid Daily
+- Validate Entry of Vehicle Manual Entry with Card
+- Validate Hourly Bill Calculation on the Exit Payment Page
 - Logout the user
